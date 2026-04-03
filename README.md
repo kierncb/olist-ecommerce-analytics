@@ -78,7 +78,8 @@ The pipeline goes beyond simple file ingestion. Key quality controls built in:
 - **Referential integrity** - foreign key violations are counted, explained, and written to timestamped audit logs rather than silently dropped
 
 
-> Full pipeline source: [`data_ingestion.py`](python\data_ingestion.py)
+> Full pipeline source: [`data_ingestion.py`](python/data_ingestion.py)
+
 
 ### QA Drop Report
 
@@ -97,11 +98,11 @@ After processing, the pipeline generates a structured QA report. Key findings:
 ### 6.1 Category Performance
 
 
-The portfolio generated **R$12.81M** in total sales across 2017–2018, with an overall average review score of **4.09/5.00**. Of the 70 product categories analyzed, **52 are classified as healthy** and **18 need attention**.
+The portfolio generated R$12.81M in total sales across 2017–2018, with an overall average review score of 4.09/5.00. Of the 70 product categories analyzed, 52 are classified as healthy** and 18 need attention.
 
 #### Star Performers (High Revenue, Strong Reviews)
 
-These categories represent the strongest value drivers, accounting for **26% of total sales** with a **4.14/5.00 average rating**:
+These categories represent the strongest value drivers, accounting for 26% of total sales with a 4.14/5.00 average rating:
 
 | Category              | Sales   | Avg Review Score |
 |----------------------|--------:|------------------|
@@ -109,12 +110,12 @@ These categories represent the strongest value drivers, accounting for **26% of 
 | Relogios Presentes   | R$1.15M | 4.07★           |
 | Esporte Lazer        | R$941K  | 4.17★           |
 
-These categories combine scale and customer satisfaction, making them ideal candidates for **continued investment, promotion, and assortment expansion**.
+These categories combine scale and customer satisfaction, making them ideal candidates for continued investment, promotion, and assortment expansion.
 
 
 #### Cash Traps (High Revenue, Low Reviews)
 
-These categories represent a critical risk, contributing **20% of total sales** but averaging only **3.96/5.00**:
+These categories represent a critical risk, contributing 20% of total sales but averaging only 3.96/5.00:
 
 | Category                  | Sales   | Avg Review Score |
 |----------------------------|--------:|------------------|
@@ -128,7 +129,7 @@ These categories generate strong revenue today while quietly accumulating custom
 The remaining 49 healthy categories fall into the Hidden Gems quadrant (lower revenue, strong reviews), representing opportunities for growth through visibility and marketing, while 15 underperforming categories sit in the Danger Zone(low revenue, low reviews).
 
 
-> SQL analysis: [`category_performance.sql`](sql\category_performance.sql)
+> SQL analysis: [`category_performance.sql`](sql/category_performance.sql)
 
 ---
 
@@ -142,9 +143,9 @@ Across 2017–2018, 91.88% of deliveries (88K orders) arrived on time, while 8.1
 
 Northeastern states are the primary gap drivers, with consistently lower on-time rates:
 
-- **Alagoas** - 75%  
-- **Maranhão** - 81%  
-- **Piauí** - 84%
+- Alagoas - 75%  
+- Maranhão - 81%  
+- Piauí - 84%
 
 This indicates that Olist’s delivery promise is not consistently upheld across regions, creating uneven customer experiences.
 
@@ -156,7 +157,7 @@ This indicates that Olist’s delivery promise is not consistently upheld across
 
 This suggests that distance alone is not the root cause.
 
-> SQL analysis: [`delivery_reliability.sql`](sql\delivery_reliability.sql)
+> SQL analysis: [`delivery_reliability`](sql/delivery_reliability.sql)
 
 
 ## 7. Power BI Dashboard
@@ -185,6 +186,7 @@ Cama Mesa Banho, Informatica Acessorios, and Moveis Decoracao collectively repre
 
 **2. Implement category-level review score thresholds**  
 To shift from reactive to proactive quality management, Olist should define minimum review score thresholds per category. Sellers falling below this threshold should trigger:
+
 - Automated warnings  
 - Reduced visibility  
 - Potential inventory suppression  
