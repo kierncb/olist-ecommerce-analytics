@@ -16,9 +16,11 @@
 
 ## 1. Executive Summary
 
-This project analyzes Olist's Brazilian e-commerce dataset to surface operational insights across two dimensions: product quality and delivery reliability. Over the 2017–2018 period, total sales reached R$12.81M with an average review score of 4.09/5.00. While 52 product categories are classified as healthy and 18 need attention, three high-revenue categories in the "Cash Trap" quadrant—Cama Mesa Banho, Informatica Acessorios, and Moveis Decoracao—collectively account for 20% of total sales while consistently scoring below the platform average, representing a significant retention risk. Olist should prioritize seller quality control and customer feedback analysis in these categories to protect long-term revenue.
+Olist's Brazilian e-commerce platform looks healthy on the surface, R$12.81M in sales, a 4.09 out of 5 average review score, and 92% of orders arriving on time. But underneath those numbers, there are two problems worth paying attention to. Three of the platform's biggest revenue categories, bed and bath, computer accessories, and home décor, together account for 20% of total sales while consistently rating below the platform average. That's a retention risk hiding behind strong topline numbers.
 
-On delivery, 91.88% of orders arrive on time, indicating that overall performance meets expectations; however, northeastern states remain disproportionately affected. Alagoas records only a 75% on-time rate, Maranhão at 80%, and Piauí at 84%, highlighting regional inefficiencies. Operations should focus on improving logistics and last-mile delivery performance in these areas to close the service gap.
+The delivery picture tells a similar story. Overall performance is solid, but the northeastern states are being left behind. Alagoas sits at just 75% on-time, Maranhão at 81%, and Piauí at 84%, well below the platform average. Interestingly, distance alone doesn't explain it. On-time deliveries stay consistent even on long routes, which points to specific carriers or regional logistics gaps rather than geography being the culprit.
+
+To get to these findings, nine messy, denormalized CSV files were redesigned into a clean 13-table relational database, with a Python ETL pipeline handling everything from encoding fixes and type validation to financial constraints and foreign key checks. Nothing was silently dropped; every issue was logged, explained, and audited. Drop rates stayed below 1% across all tables, producing a verified, audit-ready foundation that directly feeds the Power BI dashboard. Explore the full interactive dashboard here: [`olist_ecommerce.pbix`](data_dashboard/olist_ecommerce.pbix).
 
 
 ## 2. Background
